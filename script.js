@@ -1,30 +1,39 @@
 const questions = [
   {
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Lion_waiting_in_Namibia.jpg/640px-Lion_waiting_in_Namibia.jpg",
+    emoji: "🦁",
     options: ["Singa", "Harimau", "Kucing", "Serigala"],
     answer: "Singa"
   },
   {
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/African_Bush_Elephant.jpg/640px-African_Bush_Elephant.jpg",
+    emoji: "🐘",
     options: ["Jerapah", "Gajah", "Badak", "Kuda Nil"],
     answer: "Gajah"
   },
   {
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Giraffe_Mikumi_National_Park.jpg/640px-Giraffe_Mikumi_National_Park.jpg",
+    emoji: "🦒",
     options: ["Zebra", "Rusa", "Jerapah", "Unta"],
     answer: "Jerapah"
   },
   {
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/640px-Grosser_Panda.JPG",
+    emoji: "🐼",
     options: ["Beruang", "Panda", "Koala", "Kucing"],
     answer: "Panda"
+  },
+  {
+    emoji: "🐵",
+    options: ["Monyet", "Kucing", "Anjing", "Kelinci"],
+    answer: "Monyet"
+  },
+  {
+    emoji: "🐸",
+    options: ["Ular", "Katak", "Buaya", "Ikan"],
+    answer: "Katak"
   }
 ];
 
 let currentIndex = 0;
 let score = 0;
 
-// Navigasi Tampilan dengan Animasi
 function startGame() {
   score = 0;
   document.getElementById("score-display").textContent = `Skor: ${score}`;
@@ -53,7 +62,6 @@ function toggleInfo() {
   infoBox.classList.toggle("hidden");
 }
 
-// Suara Sintesis
 function playAudio(text) {
   if ('speechSynthesis' in window) {
     window.speechSynthesis.cancel();
@@ -73,11 +81,11 @@ function loadQuestion() {
   nextBtn.classList.add("hidden");
 
   if (currentIndex >= questions.length) {
-    currentIndex = 0; // Ulangi soal jika habis
+    currentIndex = 0;
   }
 
   const q = questions[currentIndex];
-  document.getElementById("animal-img").src = q.image;
+  document.getElementById("animal-emoji").textContent = q.emoji;
 
   const optionsContainer = document.getElementById("options-container");
   optionsContainer.innerHTML = "";
