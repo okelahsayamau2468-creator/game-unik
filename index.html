@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tebak Nama Hewan - Game Edukasi</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Font Google untuk tampilan lebih menarik -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -21,9 +20,8 @@
       <button class="btn-secondary" onclick="toggleInfo()">ℹ️ Cara Bermain</button>
     </div>
 
-    <!-- Info Popup -->
     <div id="info-box" class="info-box hidden">
-      <p>Pilih nama hewan yang sesuai dengan gambar. Setiap tebakan akan memberikan suara petunjuk!</p>
+      <p>Pilih nama hewan yang sesuai dengan emoji. Setiap tebakan akan memberikan suara petunjuk!</p>
     </div>
   </div>
 
@@ -34,8 +32,9 @@
       <span id="score-display">Skor: 0</span>
     </div>
 
+    <!-- TAMPILAN EMOJI DI SINI -->
     <div class="image-container">
-      <img id="animal-img" src="" alt="Gambar Hewan">
+      <div id="animal-emoji" style="font-size: 100px; padding: 20px 0;">🦁</div>
     </div>
 
     <div class="options-grid" id="options-container"></div>
